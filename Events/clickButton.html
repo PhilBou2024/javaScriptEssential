@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click Event Handling</title>
+</head>
+<body>
+  <button id="myButton">Click me!</button>
+  <p id="output"></p>
+  <script>
+    const button = document.getElementById("myButton");
+    const output = document.getElementById("output");
+
+    button.onclick = function() {
+        button.textContent= "Button clicked!";
+    };
+
+    button.onmouseover = function() {
+        button.textContent= "Mouse over the button!";
+    };
+
+    button.onkeydown = function(event) {
+        button.textContent= "Key pressed: " + event.key;
+    };
+
+  </script>
+</body>
+</html>
