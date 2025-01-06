@@ -54,6 +54,6 @@ myBlockLet = "Hello, I'm a outside block-scoped let";
 myBlockConst = "Hello, I'm a outside block-scoped const";
 
 console.log(myBlockVar);
-console.log(myBlockLet); // Throws ReferenceError 
-console.log(myBlockConst); // Throws ReferenceError
+console.log(myBlockLet);
+console.log(myBlockConst);
 
