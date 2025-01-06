@@ -1,3 +1,5 @@
+console.log("---------------- Variables declaration tests :");
+
 // Global scope
 var globalVar = "I'm a global variable";
 let globalLet = "I'm also global, but scoped with let";
@@ -28,6 +30,30 @@ function show(){
 }
 show();
     
-console.log(functionVar); // Throws ReferenceError
-console.log(functionLet); // Throws ReferenceError
-console.log(functionConst); // Throws ReferenceError
+// console.log(functionVar); // Throws ReferenceError
+// console.log(functionLet); // Throws ReferenceError
+// console.log(functionConst); // Throws ReferenceError
+
+console.log("---------------- Variables reassign tests :");
+{
+    var myBlockVar = "Hello, I'm a block-scoped var";
+    let myBlockLet = "Hello, I'm a block-scoped let";
+    const myBlockConst = "Hello, I'm a block-scoped const";
+
+    myBlockVar = "my block-scoped var";
+    myBlockLet = "my block-scoped let";
+//    myBlockConst = "my block-scoped const"; // Throws TypeError
+
+    console.log(myBlockVar);
+    console.log(myBlockLet);
+    console.log(myBlockConst);
+}
+
+myBlockVar = "Hello, I'm a outside block-scoped var";
+myBlockLet = "Hello, I'm a outside block-scoped let";
+myBlockConst = "Hello, I'm a outside block-scoped const";
+
+console.log(myBlockVar);
+console.log(myBlockLet); // Throws ReferenceError 
+console.log(myBlockConst); // Throws ReferenceError
+
