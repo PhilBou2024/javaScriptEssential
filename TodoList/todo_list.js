@@ -2,11 +2,16 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+const clearAllTasksBtn = document.getElementById("clearAllTasksBtn");
 
 let tasks = [];
 
+taskInput.addEventListener("keydown", function(event) {
+    if (event.key == 'Enter') addTask();
+});
 addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+clearAllTasksBtn.addEventListener("click", clearAllTasks);
 
 displayTasks();
 
@@ -40,3 +45,9 @@ function clearCompletedTasks() {
     displayTasks();
 }
 
+function clearAllTasks() {
+    if(confirm("All taks will be deleted. Are you sure ?")) {
+        tasks = [];
+    }
+    displayTasks();
+}
