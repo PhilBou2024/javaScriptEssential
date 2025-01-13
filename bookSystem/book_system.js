@@ -26,6 +26,7 @@ function showbooks() {
         <p><strong>Author Name:</strong> ${book.authorName}</p>
         <p><strong>Book Description:</strong> ${book.bookDescription}</p>
         <p><strong>No. of Pages:</strong> ${book.pagesNumber} page(s)</p>
+        <button onclick="updateBook(${index})">Update</button>
         <button onclick="deleteBook(${index})">Delete</button>`
     );
     document.getElementById('books').innerHTML = booksDiv.join('');
@@ -41,4 +42,17 @@ function clearInputs() {
 function deleteBook(index) {
     books.splice(index, 1);
     showbooks();
+}
+
+function updateBook(index) {
+    const bookName = document.getElementById('bookName').value;
+    const authorName = document.getElementById('authorName').value;
+    const bookDescription = document.getElementById('bookDescription').value;
+    const pagesNumber = parseInt(document.getElementById('pagesNumber').value);
+    if (bookName) books[index].name = bookName;
+    if (authorName) books[index].authorName = authorName;
+    if (bookDescription) books[index].bookDescription = bookDescription;
+    if (!isNaN(pagesNumber)) books[index].pagesNumber = pagesNumber;
+    showbooks();
+    clearInputs();
 }
